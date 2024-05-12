@@ -5,7 +5,6 @@ fetch("assets/videos.json")
 .then(response => response.json())
 .then(videos => {
     // console.log(videos);
-
     videos.forEach(video => {
         videoCard += `
         <div class="flex flex-row space-y-3 cursor-pointer">
@@ -21,14 +20,15 @@ fetch("assets/videos.json")
 
         <div class="flex items-center space-x-3">
             <!-- channel logo -->
+            <img class="w-12 h-12 rounded-full object-cover" src="${video.desc.channelLogo}" alt="" draggable="false">
             <div class="flex items-start">
-            <a href="${video.videoURL}" class="text-sm2 text-bold text-white pr-1">${video.desc.title}</a>
+            <a href="${video.videoURL}" class="text-sm text-bold text-white pr-1">${video.desc.title}</a>
             <i class="material-icons text-white md-21">more_vert</i>
             </div>
         </div>
 
         <!-- channel link and meta data -->
-        <div class="flex flex-col pl-1 sm:pl-0" style="margin-top: 1rem;">
+        <div class="flex flex-col pl-1 sm:pl-0 ml-14">
             <a href="${video.desc.channelURL}" class="text-gray-400 text-sm hover:text-white">${video.desc.channelName}</a>
             <div class="flex space-x-1">
                 <span class="text-sm text-gray-400">${video.desc.views} views</span>
@@ -53,3 +53,29 @@ function toggleMenu() {
         document.getElementById('stupid_class_name').style.width = '100%';
     }
 }
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  function myFunction2() {
+      document.getElementById("myDropdown2").classList.toggle("show");
+  }
+  
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }

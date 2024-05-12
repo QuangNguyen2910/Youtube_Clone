@@ -2,12 +2,12 @@ let videosContainer = document.getElementById('videos-container');
 let videoCard = "";
 
 fetch("assets/videos.json")
-.then(response => response.json())
-.then(videos => {
-    // console.log(videos);
+    .then(response => response.json())
+    .then(videos => {
+        // console.log(videos);
 
-    videos.forEach(video => {
-        videoCard += `
+        videos.forEach(video => {
+            videoCard += `
         <div class="flex flex-col space-y-3 cursor-pointer">
         <!-- thumbnail -->
         <a href="${video.videoURL}">
@@ -38,19 +38,45 @@ fetch("assets/videos.json")
         </div>
         </div>
     </div>`
-    });
-    videosContainer.innerHTML = videoCard;
-})
+        });
+        videosContainer.innerHTML = videoCard;
+    })
 
 function toggleMenu() {
     let sidebar_status = document.getElementById('sideBar').style.display;
     if (sidebar_status === 'none' || sidebar_status === '') {
         document.getElementById('sideBar').style.display = 'block';
         document.getElementById('stupid_class_name').style.marginLeft = '15rem';
-        document.getElementById('stupid_class_name').style.width = '80%';
+        document.getElementById('stupid_class_name').style.width = '83.5%';
     } else {
         document.getElementById('sideBar').style.display = 'none';
         document.getElementById('stupid_class_name').style.marginLeft = '0rem';
         document.getElementById('stupid_class_name').style.width = '100%';
     }
+}
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction2() {
+    document.getElementById("myDropdown2").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
 }

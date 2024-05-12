@@ -17,7 +17,7 @@
 <body class="body">
 
     <!-- top fixed navbar -->
-    <nav class="bg-topNavBg w-full p-1 fixed top-0 z-20">
+    <nav class="bg-topNavBg w-full p-1 fixed top-0 z-100">
         <!-- navbar container -->
         <div class="flex justify-between items-center px-2 sm:px-6 py-1.5 mx-auto">
             <!-- logo container -->
@@ -33,7 +33,7 @@
                 <!-- input box -->
                 <div class="flex items-center flex-auto justify-between rounded border border-sideBarHoverBg">
                     <input class="bg-searchBarBg w-full rounded-l outline-none border-none p-0.5 pl-3 text-white placeholder-gray-500" type="text" placeholder="Search">
-                    
+
                     <i class="material-icons md-21 text-center rounded-r text-gray-300 hover:text-white p-1 w-20 bg-searchIconBg cursor-pointer">search</i>
                 </div>
                 <div class="flex items-center justify-center w-9 h-9 rounded-full bg-mainBg cursor-pointer">
@@ -43,9 +43,81 @@
 
             <!-- right icons container  -->
             <div class="flex items-center space-x-3 sm:space-x-6 pr-4">
-                <i class="material-icons text-white cursor-pointer">video_call</i>
-                <i class="material-icons text-white cursor-pointer">apps</i>
-                <i class="material-icons text-white cursor-pointer">notifications</i>
+                <div class="dropdown">
+                    <i class="material-icons text-white cursor-pointer dropbtn" title="Video Call" onclick="myFunction2()">video_call</i>
+                    <div id="myDropdown2" class="dropdown-content" style="min-width: 300px">
+                        <a href="#">Upload video</a>
+                        <a href="#">Go live</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <i class="material-icons text-white cursor-pointer dropbtn" title="notifications" onclick="myFunction()">notifications</i>
+                    <div id="myDropdown" class="dropdown-content">
+                            <div class="flex flex-row space-y-3 cursor-pointer">
+                                <!-- video details -->
+                                <div class="flex flex-col flex-auto space-y-1.5 mb-3">
+
+                                    <div class="flex items-center space-x-3">
+                                        <!-- channel logo -->
+                                        <img class="w-12 h-12 rounded-full object-cover cursor-pointer" src="./assets/images/not_author.png" alt="">
+                                        <div class="flex items-start">
+                                            <a href="#" class="text-sm text-bold text-white pr-1">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- channel link and meta data -->
+                                    <div class="flex flex-col pl-1 sm:pl-0 ml-14">
+                                        <a href="" class="text-gray-400 text-sm hover:text-white">Jhon Doe</a>
+                                        <div class="flex space-x-1">
+                                            <span class="text-sm text-gray-400">• 1 month ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-row space-y-3 cursor-pointer">
+                                <!-- video details -->
+                                <div class="flex flex-col flex-auto space-y-1.5 mb-3">
+
+                                    <div class="flex items-center space-x-3">
+                                        <!-- channel logo -->
+                                        <img class="w-12 h-12 rounded-full object-cover cursor-pointer" src="./assets/images/not_author.png" alt="">
+                                        <div class="flex items-start">
+                                            <a href="#" class="text-sm text-bold text-white pr-1">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- channel link and meta data -->
+                                    <div class="flex flex-col pl-1 sm:pl-0 ml-14">
+                                        <a href="" class="text-gray-400 text-sm hover:text-white">Jhon Doe</a>
+                                        <div class="flex space-x-1">
+                                            <span class="text-sm text-gray-400">• 1 month ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-row space-y-3 cursor-pointer">
+                            <!-- video details -->
+                            <div class="flex flex-col flex-auto space-y-1.5 mb-3">
+
+                                <div class="flex items-center space-x-3">
+                                    <!-- channel logo -->
+                                    <img class="w-12 h-12 rounded-full object-cover cursor-pointer" src="./assets/images/not_author.png" alt="">
+                                    <div class="flex items-start">
+                                        <a href="#" class="text-sm text-bold text-white pr-1">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
+                                    </div>
+                                </div>
+
+                                <!-- channel link and meta data -->
+                                <div class="flex flex-col pl-1 sm:pl-0 ml-14">
+                                    <a href="" class="text-gray-400 text-sm hover:text-white">Jhon Doe</a>
+                                    <div class="flex space-x-1">
+                                        <span class="text-sm text-gray-400">• 1 month ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
 
                 <img class="w-9 h-9 rounded-full object-cover cursor-pointer" src="./assets/images/not_author.png" alt="" draggable="false">
             </div>
@@ -81,7 +153,7 @@
                     <div class = "flex items-center space-x-5 hover:bg-sideBarHoverBg px-7 py-2.5 cursor-pointer">
                         <i class="bi bi-fire material-icons text-gray-400 md-21" style="font-size: 1.2rem;"></i>
                         <h2 class="text-sm text-white">Trending</h2>
-                    </div>                    
+                    </div>
                 </a>
 
             </div>
@@ -214,7 +286,7 @@
                     <a class="text-xs text-gray-400" href="">How YouTube works</a>
                     <a class="text-xs text-gray-400" href="">Test new features</a>
             </div>
-            
+
             <!-- copyright -->
             <span class="text-gray-500 text-xs px-6 py-2">&copy; 2021 Google LLC</span>
 
